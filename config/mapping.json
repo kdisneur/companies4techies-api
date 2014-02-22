@@ -1,0 +1,45 @@
+{
+  "settings" : {
+    "number_of_shards" : 1,
+    "analysis" : {
+      "filter" : {
+        "technologies_synonym" : {
+          "type" : "synonym",
+          "synonyms_path" : "config/synonyms/technologies.txt"
+        }
+      },
+      "analyzer" : {
+        "technologies_synonyms" : {
+          "tokenizer" : "whitespace",
+          "filter" : ["standard", "lowercase", "stop", "technologies_synonym"],
+          "type" : "custom"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "company" : {
+      "properties" : {
+        "name" : { "type" : "string", "store" : "yes" },
+        "logo" : { "type" : "string", "store" : "yes" },
+        "website" : { "type" : "string", "store" : "yes" },
+        "employees" : { "type" : "string", "store" : "yes" },
+        "technologies" : { "type" : "string", "store" : "yes", "analyzer" : "technologies_synonyms" },
+        "freelance": { "type" : "boolean", "store" : "yes" },
+        "remote": { "type" : "boolean", "store" : "yes" },
+        "part_time": { "type" : "boolean", "store" : "yes" },
+        "types": { "type" : "string", "store" : "yes" },
+        "created_at": { "type" : "date", "store" : "yes", "format": "YYYY/MM/dd" },
+        "locations" : {
+          "type" : "nested",
+          "properties" : {
+            "city" : { "type" : "string", "store" : "yes" },
+            "country" : { "type" : "string", "store" : "yes" },
+            "coordinates" : { "type" : "geo_point", "store" : "yes" }
+          }
+        }
+      }
+    }
+  }
+}
+

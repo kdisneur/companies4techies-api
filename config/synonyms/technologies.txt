@@ -1,0 +1,53 @@
+# ruby synonyms
+rails, ror, rubyonrails, ruby on rails, sinatra => ruby
+rails, ror, ruby on rails, rubyonrails
+sinatra
+
+# php synonyms
+drupal, magento, prestashop, symfony, wordpress, zend framework => php
+drupal
+magento
+prestashop
+symfony
+wordpress
+zend framework
+
+# python synonyms
+django, openerp, zope => python
+django
+openerp
+zope
+
+# java synonyms
+J2EE, play => java
+J2EE
+play
+
+# javascript synonyms
+angularjs, backbonejs, coffeescript, emberjs, jquery => javascript
+angularjs
+backbonejs
+coffeescript
+emberjs
+jquery
+
+# sql synonyms
+mysql, postgresql, sql server, oracle => sql
+mysql
+postgresql
+sql server
+oracle
+
+# nosql synonyms
+mongodb, couchbase, couchdb => nosql
+couchdb
+couchbase
+mongodb
+
+# ,net synonyms
+c#, sharepoint => .net
+c#
+sharepoint
+
+# tfs synonyms
+tfs, team foundation server
