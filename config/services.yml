@@ -1,0 +1,18 @@
+parameters:
+  environment: <%= ENV['RACK_ENV'] %>
+services:
+  elasticsearch_configuration:
+    class: 'Configurations::Elasticsearch'
+    file_path: './lib/configurations/elasticsearch'
+    arguments:
+      - '%environment%'
+  elasticsearch_client:
+    class: 'ElasticsearchClient'
+    file_path: './lib/elasticsearch_client'
+    arguments:
+      - '@elasticsearch_configuration'
+  technology_finder:
+    class: 'TechnologyFinder'
+    file_path: './lib/finders/technology_finder'
+    arguments:
+      - '@elasticsearch_client'

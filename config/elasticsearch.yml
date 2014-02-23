@@ -1,0 +1,9 @@
+default: &default
+  host: <%= ENV['ES_HOST'] %>
+  index: 'companies4techies'
+  trace: false
+  type:  'company'
+
+development:
+  <<: *default
+  trace: true
