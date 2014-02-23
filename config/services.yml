@@ -11,8 +11,18 @@ services:
     file_path: './lib/elasticsearch_client'
     arguments:
       - '@elasticsearch_configuration'
+  global_finder:
+    class: 'Finders::GlobalFinder'
+    file_path: './lib/finders/global_finder'
+    arguments:
+      - '@elasticsearch_client'
+  trending_finder:
+    class: 'Finders::TrendingFinder'
+    file_path: './lib/finders/trending_finder'
+    arguments:
+      - '@elasticsearch_client'
   technology_finder:
-    class: 'TechnologyFinder'
+    class: 'Finders::TechnologyFinder'
     file_path: './lib/finders/technology_finder'
     arguments:
       - '@elasticsearch_client'
